@@ -95,10 +95,14 @@ export default function Signup(props) {
         <FormGroup controlId="password" bsSize="large">
           <ControlLabel>Password</ControlLabel>
           <FormControl type="password" value={fields.password} onChange={handleFieldChange} />
+          <HelpBlock>Passwords must contain an uppercase letter, number, and symbol</HelpBlock>
         </FormGroup>
-        <FormGroup controlId="confirmPassword" bsSize="large">
+        <FormGroup controlId="confirmPassword" bsSize="large"
+        validationState={fields.password === fields.confirmPassword ? null : "error"}>
           <ControlLabel>Confirm Password</ControlLabel>
           <FormControl type="password" onChange={handleFieldChange} value={fields.confirmPassword} />
+          {fields.password !== fields.confirmPassword &&
+          <HelpBlock>Password and Confirm Password do not match.</HelpBlock>}
         </FormGroup>
         <LoaderButton block type="submit" bsSize="large" isLoading={isLoading} disabled={!validateForm()}>Sign Up</LoaderButton>
       </form>
