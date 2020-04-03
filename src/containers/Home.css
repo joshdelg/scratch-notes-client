@@ -24,3 +24,15 @@
 .Home .notes p {
     color: #666;
 }
+
+.buttons {
+    /*max-width: 400px;*/
+    background-color: #eee;
+    width: fit-content;
+    margin: auto;
+    
+}
+
+.buttons a {
+    margin: 12px;
+}

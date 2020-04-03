@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from "react";
-import { PageHeader, ListGroup, ListGroupItem } from "react-bootstrap";
+import { PageHeader, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "./Home.css";
 import { API } from "aws-amplify";
@@ -57,6 +57,14 @@ export default function Home(props) {
                 <div className="lander">
                     <h1>Scratch</h1>
                     <p>A simple note taking app.</p>
+                    <div className="buttons">
+                        <LinkContainer to="/signup">
+                            <Button className="signupbutton" bsSize="large" bsStyle="primary">Sign Up</Button>
+                        </LinkContainer>
+                        <LinkContainer to="/login">
+                            <Button className="loginbutton" bsSize="large" bsStyle="success">Log In</Button>
+                        </LinkContainer>
+                    </div>
                 </div>
             </div>
         ); 
