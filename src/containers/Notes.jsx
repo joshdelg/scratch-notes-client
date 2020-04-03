@@ -75,10 +75,9 @@ export default function Notes(props) {
 
         // Delete old file from S3
         await Storage.vault.remove(note.attachment);
-
+        note.attachment = attachment;
       }
 
-      note.attachment = attachment;
       await saveNote({
         content,
         attachment: attachment || note.attachment
